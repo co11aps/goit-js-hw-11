@@ -8,21 +8,23 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <section>
-      <form class="searchForm">
-        <input type="text" />
+    <section class="gallery-section">
+      <form class="js-search-form">
+        <input
+          type="text"
+          class="form-input"
+          name="query"
+          placeholder="Search images"
+        />
         <button type="submit">Search</button>
       </form>
-      <span class="loader"></span>
+      <span class="loader isHidden"></span>
       <div>
-        <ul class="gallery">
-          <li>1</li>
-          <li>2</li>
-        </ul>
+        <ul class="gallery js-gallery"></ul>
       </div>
     </section>
     <script type="module" src="./main.js"></script>
-    <script type="module" src="./js/pixabay-api.js"></script>
-    <script type="module" src="./js/render-function.js"></script>
+    <!-- <script type="module" src="./js/pixabay-api.js"></script>
+    <script type="module" src="./js/render-functions.js"></script> -->
   </body>
 </html>

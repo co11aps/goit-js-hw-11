@@ -1,5 +1,4 @@
 .loader {
-    display: none;
     width: 54px;
     height: 54px;
     position: relative;
@@ -41,6 +40,6 @@
 }
 
 
-.isVisible {
-    display: inline;
+.isHidden {
+    display: none;
 }
