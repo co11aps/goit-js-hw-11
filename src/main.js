@@ -14,11 +14,16 @@ refs.searchForm.addEventListener('submit', e => {
 
   if (searchTopic !== '') {
     refs.loader.classList.remove('isHidden');
-    searchPicture(searchTopic).then(data => {
-      galleryTemplate(data);
-      renderGallery(data);
-      refs.loader.classList.add('isHidden');
-    });
+    refs.gallery.innerHTML = '';
+    searchPicture(searchTopic)
+      .then(data => {
+        galleryTemplate(data);
+        renderGallery(data);
+        refs.loader.classList.add('isHidden');
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   e.target.reset();
