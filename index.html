@@ -7,26 +7,28 @@
     <title>goit-js-hw-11</title>
     
     <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-db7463ae.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-874053e3.js">
     <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-cf6910df.css">
-    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-f31b2afb.css">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-f3286e14.css">
   </head>
   <body>
-    <section>
-      <form class="searchForm">
-        <input type="text" />
+    <section class="gallery-section">
+      <form class="js-search-form">
+        <input
+          type="text"
+          class="form-input"
+          name="query"
+          placeholder="Search images"
+        />
         <button type="submit">Search</button>
       </form>
-      <span class="loader"></span>
+      <span class="loader isHidden"></span>
       <div>
-        <ul class="gallery">
-          <li>1</li>
-          <li>2</li>
-        </ul>
+        <ul class="gallery js-gallery"></ul>
       </div>
     </section>
     
-    
-    
+    <!-- <script type="module" src="./js/pixabay-api.js"></script>
+    <script type="module" src="./js/render-functions.js"></script> -->
   </body>
 </html>
