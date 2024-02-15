@@ -29,7 +29,6 @@ export function renderGallery(resultsArr) {
     refs.gallery.innerHTML = markup;
     lightbox.refresh();
   } else {
-    // refs.gallery.innerHTML = '';
     iziToast.show({
       message:
         'Sorry, there are no images matching<br>your search query. Please try again!',

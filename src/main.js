@@ -28,23 +28,3 @@ refs.searchForm.addEventListener('submit', e => {
 
   e.target.reset();
 });
-
-// function renderGallery(resultsArr) {
-//   const markup = resultsArr.hits
-//     .map(
-//       ({ largeImageURL, webformatURL, tags }) => `<li class="gallery-item">
-//   <a class="gallery-link" href="${largeImageURL}">
-//     <img class="gallery-image" src="${webformatURL}" alt="${tags}" />
-//   </a>
-// </li>`
-//     )
-//     .join('');
-
-//   refs.gallery.insertAdjacentHTML('afterbegin', markup);
-
-//   let lightbox = new SimpleLightbox('.gallery a', {
-//     overlayOpacity: 0.8,
-//     captionsData: 'alt',
-//     captionDelay: 250,
-//   });
-// }
