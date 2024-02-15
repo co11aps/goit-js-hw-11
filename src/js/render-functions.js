@@ -1,37 +1,38 @@
-function galleryTemplate(searchTopic) {
-  return `<div class="hero-card card">
-  <div class="image-container">
-    <img
-      src="${hero.images.lg}"
-      alt="#"
-      class="hero-image"
-    />
-  </div>
-  <div class="hero-body">
-    <h4 class="hero-name">${hero.name}</h4>
-    <p class="hero-bio">
-      ${hero.biography.fullName} - ${hero.biography.placeOfBirth}, ${hero.work.base}
-    </p>
-  </div>
-</div>`;
-}
+import { refs } from '../main.js';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
-function renderGallery(searchTopic) {
-  const markup = galleryTemplate(searchTopic);
-  refs.heroEl.insertAdjacentHTML('afterbegin', markup);
-}
+let lightbox = new SimpleLightbox('.gallery a', {
+  overlayOpacity: 0.8,
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 
-function renderUsers(users) {
-  const markup = users
-    .map(user => {
-      return `
-          <li>
-            <p><b>Name</b>: ${user.name}</p>
-            <p><b>Email</b>: ${user.email}</p>
-            <p><b>Company</b>: ${user.company.name}</p>
-          </li>
-      `;
-    })
+export function galleryTemplate(resultsArr) {
+  return resultsArr.hits
+    .map(
+      ({ largeImageURL, webformatURL, tags }) => `<li class="gallery-item">
+  <a class="gallery-link" href="${largeImageURL}">
+    <img class="gallery-image" src="${webformatURL}" alt="${tags}" loading="lazy"/>
+  </a>
+</li>`
+    )
     .join('');
-  userList.insertAdjacentHTML('beforeend', markup);
+}
+
+export function renderGallery(resultsArr) {
+  if (resultsArr.hits.length > 0) {
+    const markup = galleryTemplate(resultsArr);
+    refs.gallery.innerHTML = markup;
+    lightbox.refresh();
+  } else {
+    refs.gallery.innerHTML = '';
+    iziToast.show({
+      message:
+        'Sorry, there are no images matching your search query. Please try again!',
+      color: 'red',
+    });
+  }
 }
