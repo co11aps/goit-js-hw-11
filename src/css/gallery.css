@@ -9,6 +9,7 @@
 .gallery-section {
     background-color: #FFF;
     max-width: 1440px;
+    margin: 0 auto;
 }
 
 .gallery-item {
@@ -42,4 +43,45 @@
 
 .sl-wrapper .sl-counter {
     color: #FFF;
+}
+
+.js-search-form {
+    margin: 0 auto;
+    text-align: center;
+}
+
+form button {
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 92px;
+    height: 40px;
+
+    border: none;
+
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    background: #4e75ff;
+
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+form button:hover {
+    background: #6c8cff;
+}
+
+input {
+    width: 272px;
+    height: 40px;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid #808080;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    padding: 0px 16px;
+    margin-right: 8px;
 }

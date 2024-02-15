@@ -3,6 +3,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import stopIcon from '../img/stop-icon.svg';
 
 let lightbox = new SimpleLightbox('.gallery a', {
   overlayOpacity: 0.8,
@@ -31,8 +32,17 @@ export function renderGallery(resultsArr) {
     refs.gallery.innerHTML = '';
     iziToast.show({
       message:
-        'Sorry, there are no images matching your search query. Please try again!',
+        'Sorry, there are no images matching<br>your search query. Please try again!',
       color: 'red',
+      messageColor: '#fff',
+      backgroundColor: '#EF4040',
+      messageSize: '16',
+      position: 'topRight',
+      iconUrl: stopIcon,
+      messageLineHeight: '24',
+      closeOnClick: 'true',
+      close: 'false',
+      transitionIn: 'fadeInLeft',
     });
   }
 }
